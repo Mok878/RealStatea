@@ -1216,3 +1216,4 @@ img { max-width: 100%; display: block; }
   .lp-specs-grid { grid-template-columns: 1fr; }
   .amenities-grid { grid-template-columns: repeat(2, 1fr); }
 }
+
