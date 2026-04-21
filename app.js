@@ -2,97 +2,97 @@
 const properties = [
   {
     id: 1,
-    title: "Modern Family Villa",
-    price: "$850,000",
-    priceRaw: 850000,
-    location: "Beverly Hills, CA",
+    title: "Villa Moderne à Hydra",
+    price: "85 000 000 DA",
+    priceRaw: 85000000,
+    location: "Hydra, Alger",
     type: "villa",
     status: "sale",
     beds: 5,
     baths: 4,
-    sqft: "4,200",
+    sqft: "390 m²",
     garage: 2,
-    description: "A stunning modern villa nestled in the heart of Beverly Hills. Features an open-plan living area, chef's kitchen, home theater, and a resort-style pool. Perfect for families seeking luxury and comfort.",
+    description: "Superbe villa moderne au cœur du quartier résidentiel de Hydra, Alger. Salon spacieux, cuisine équipée, terrasse panoramique et jardin privé. Idéale pour une famille cherchant confort et prestige dans la capitale.",
     gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
     emoji: "🏡"
   },
   {
     id: 2,
-    title: "Downtown Luxury Apartment",
-    price: "$3,200/mo",
-    priceRaw: 3200,
-    location: "Manhattan, NY",
+    title: "Appartement F3 Bab Ezzouar",
+    price: "55 000 DA/mois",
+    priceRaw: 55000,
+    location: "Bab Ezzouar, Alger",
     type: "apartment",
     status: "rent",
-    beds: 2,
+    beds: 3,
     baths: 2,
-    sqft: "1,100",
+    sqft: "110 m²",
     garage: 1,
-    description: "Sleek and sophisticated apartment in the heart of Manhattan. Floor-to-ceiling windows offer breathtaking city views. Building amenities include a rooftop terrace, gym, and 24/7 concierge.",
+    description: "Bel appartement F3 bien ensoleillé dans une résidence sécurisée à Bab Ezzouar, proche de la zone technologique et des universités. Immeuble avec ascenseur, parking et gardien 24h/24.",
     gradient: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
     emoji: "🏙️"
   },
   {
     id: 3,
-    title: "Beachfront Cottage",
-    price: "$1,250,000",
-    priceRaw: 1250000,
-    location: "Malibu, CA",
-    type: "house",
+    title: "Villa Bord de Mer – Aïn Taya",
+    price: "120 000 000 DA",
+    priceRaw: 120000000,
+    location: "Aïn Taya, Alger",
+    type: "villa",
     status: "sale",
-    beds: 3,
-    baths: 2,
-    sqft: "1,800",
-    garage: 1,
-    description: "Wake up to the sound of waves in this charming beachfront cottage. Direct beach access, wraparound deck, and stunning ocean views from every room. A rare gem on the Malibu coastline.",
+    beds: 4,
+    baths: 3,
+    sqft: "320 m²",
+    garage: 2,
+    description: "Magnifique villa avec vue imprenable sur la mer Méditerranée à Aïn Taya. Accès direct à la plage, grande terrasse, piscine privée et jardin paysager. Un bien rare sur la côte algéroise.",
     gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
     emoji: "🏖️"
   },
   {
     id: 4,
-    title: "Suburban Family Home",
-    price: "$425,000",
-    priceRaw: 425000,
-    location: "Austin, TX",
-    type: "house",
+    title: "Appartement F4 – Oran Centre",
+    price: "38 000 000 DA",
+    priceRaw: 38000000,
+    location: "Oran Centre, Oran",
+    type: "apartment",
     status: "sale",
     beds: 4,
-    baths: 3,
-    sqft: "2,600",
-    garage: 2,
-    description: "Spacious family home in a quiet, tree-lined neighborhood. Large backyard with a deck, updated kitchen, and top-rated school district. Move-in ready with fresh paint and new flooring throughout.",
+    baths: 2,
+    sqft: "145 m²",
+    garage: 1,
+    description: "Grand appartement F4 rénové au cœur d'Oran, à deux pas du front de mer. Cuisine moderne, double vitrage, parquet en bois. Quartier calme avec toutes les commodités à proximité.",
     gradient: "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)",
     emoji: "🏠"
   },
   {
     id: 5,
-    title: "Penthouse Suite",
-    price: "$5,500/mo",
-    priceRaw: 5500,
-    location: "Chicago, IL",
+    title: "Penthouse Vue Mer – Annaba",
+    price: "75 000 DA/mois",
+    priceRaw: 75000,
+    location: "Annaba Centre, Annaba",
     type: "apartment",
     status: "rent",
     beds: 3,
     baths: 3,
-    sqft: "2,400",
+    sqft: "220 m²",
     garage: 2,
-    description: "Exclusive penthouse with panoramic views of Lake Michigan and the Chicago skyline. Private rooftop terrace, smart home technology, and premium finishes throughout. The pinnacle of urban living.",
+    description: "Penthouse d'exception avec vue panoramique sur la mer à Annaba. Grande terrasse privée, domotique, finitions haut de gamme. Résidence sécurisée avec piscine et salle de sport.",
     gradient: "linear-gradient(135deg, #fa709a 0%, #fee140 100%)",
     emoji: "🌆"
   },
   {
     id: 6,
-    title: "Prime Office Space",
-    price: "$8,000/mo",
-    priceRaw: 8000,
-    location: "San Francisco, CA",
+    title: "Local Commercial – Constantine",
+    price: "90 000 DA/mois",
+    priceRaw: 90000,
+    location: "Rue Larbi Ben M'hidi, Constantine",
     type: "commercial",
     status: "rent",
     beds: 0,
-    baths: 4,
-    sqft: "3,500",
-    garage: 5,
-    description: "Premium commercial office space in the heart of San Francisco's financial district. Open floor plan, private meeting rooms, high-speed fiber internet, and stunning bay views. Ideal for tech startups and established firms.",
+    baths: 2,
+    sqft: "280 m²",
+    garage: 3,
+    description: "Local commercial idéalement situé sur l'artère principale de Constantine. Grande vitrine, espace ouvert modulable, réserve et sanitaires. Parfait pour commerce, showroom ou bureau. Fort passage piéton.",
     gradient: "linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%)",
     emoji: "🏢"
   }
@@ -121,13 +121,13 @@ function renderListings(filter = "all") {
           <button class="card-favorite" onclick="toggleFav(event, this)" aria-label="Save property">♡</button>
         </div>
         <div class="card-body">
-          <div class="card-price">${p.price} ${p.status === "rent" ? '<span>/ month</span>' : ''}</div>
+          <div class="card-price">${p.price} ${p.status === "rent" ? '<span>/ mois</span>' : ''}</div>
           <div class="card-title">${p.title}</div>
           <div class="card-location">📍 ${p.location}</div>
           <div class="card-features">
             ${bedsHtml}
-            <span>🚿 ${p.baths} Baths</span>
-            <span>📐 ${p.sqft} sqft</span>
+            <span>🚿 ${p.baths} Bains</span>
+            <span>📐 ${p.sqft}</span>
           </div>
         </div>
       </div>
@@ -156,19 +156,19 @@ function openModal(id) {
   const p = properties.find(x => x.id === id);
   if (!p) return;
   const [label, cls] = getStatusBadge(p.status);
-  const bedsHtml = p.beds > 0 ? `<div class="modal-feature"><strong>${p.beds}</strong>Bedrooms</div>` : "";
+  const bedsHtml = p.beds > 0 ? `<div class="modal-feature"><strong>${p.beds}</strong>Chambres</div>` : "";
 
   document.getElementById("modalContent").innerHTML = `
     <div class="modal-img" style="background:${p.gradient};display:flex;align-items:center;justify-content:center;font-size:7rem;">${p.emoji}</div>
     <div class="modal-body">
       <span class="card-badge ${cls}" style="position:static;display:inline-block;margin-bottom:10px;">${label}</span>
       <h2>${p.title}</h2>
-      <div class="modal-price">${p.price}${p.status === "rent" ? " <small style='font-size:.6em;color:#64748b'>/ month</small>" : ""}</div>
+      <div class="modal-price">${p.price}${p.status === "rent" ? " <small style='font-size:.6em;color:#64748b'>/ mois</small>" : ""}</div>
       <div class="modal-location">📍 ${p.location}</div>
       <div class="modal-features-grid">
         ${bedsHtml}
-        <div class="modal-feature"><strong>${p.baths}</strong>Bathrooms</div>
-        <div class="modal-feature"><strong>${p.sqft}</strong>Sq Ft</div>
+        <div class="modal-feature"><strong>${p.baths}</strong>Salles de bain</div>
+        <div class="modal-feature"><strong>${p.sqft}</strong>Surface</div>
         <div class="modal-feature"><strong>${p.garage}</strong>Garage</div>
       </div>
       <p class="modal-desc">${p.description}</p>
@@ -274,20 +274,20 @@ document.querySelectorAll(".feature-card, .agent-card, .testimonial-card").forEa
 renderListings();
 
 // ===== MAP =====
-// Approximate coordinates for each property
+// Coordinates for Algerian cities
 const propertyCoords = {
-  1: [34.0736, -118.4004],   // Beverly Hills, CA
-  2: [40.7580, -73.9855],    // Manhattan, NY
-  3: [34.0259, -118.7798],   // Malibu, CA
-  4: [30.2672, -97.7431],    // Austin, TX
-  5: [41.8827, -87.6233],    // Chicago, IL
-  6: [37.7749, -122.4194],   // San Francisco, CA
+  1: [36.7372, 3.0466],    // Hydra, Alger
+  2: [36.7213, 3.1840],    // Bab Ezzouar, Alger
+  3: [36.7900, 3.2500],    // Aïn Taya, Alger
+  4: [35.6969, -0.6331],   // Oran Centre
+  5: [36.9000, 7.7667],    // Annaba Centre
+  6: [36.3650, 6.6147],    // Constantine Centre
 };
 
 function initMap() {
   const map = L.map("propertyMap", {
-    center: [37.5, -96],
-    zoom: 4,
+    center: [28.0339, 1.6596],  // Centre of Algeria
+    zoom: 5,
     zoomControl: true,
   });
 
@@ -330,15 +330,15 @@ function initMap() {
       <div class="map-popup">
         <div class="pop-emoji" style="background:${p.gradient}">${p.emoji}</div>
         <div style="padding:12px 14px 14px">
-          <div class="pop-price">${p.price}${p.status === "rent" ? "/mo" : ""}</div>
+          <div class="pop-price">${p.price}${p.status === "rent" ? "/mois" : ""}</div>
           <div class="pop-title">${p.title}</div>
           <div class="pop-loc">📍 ${p.location}</div>
           <div class="pop-features">
             ${bedsHtml}
             <span>🚿 ${p.baths}</span>
-            <span>📐 ${p.sqft} sqft</span>
+            <span>📐 ${p.sqft}</span>
           </div>
-          <a href="#" class="pop-btn" onclick="openModal(${p.id});return false;">View Details →</a>
+          <a href="#" class="pop-btn" onclick="openModal(${p.id});return false;">Voir les détails →</a>
         </div>
       </div>
     `;
@@ -355,7 +355,7 @@ function initMap() {
     item.dataset.id = p.id;
     item.innerHTML = `
       <span class="mli-badge ${cls}">${label}</span>
-      <div class="mli-price">${p.price}${p.status === "rent" ? "/mo" : ""}</div>
+      <div class="mli-price">${p.price}${p.status === "rent" ? "/mois" : ""}</div>
       <div class="mli-title">${p.title}</div>
       <div class="mli-loc">📍 ${p.location}</div>
     `;
@@ -595,3 +595,4 @@ document.getElementById("successOverlay")?.addEventListener("click", e => {
     document.body.style.overflow = "";
   }
 });
+
