@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DarDZ – Find Your Dream Home</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="logo">Dar<span>DZ</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#listings">Listings</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#map">Map</a></li>
+        <li><a href="#agents">Agents</a></li>
+        <li><a href="#list-property">List Property</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="#list-property" class="btn btn-outline">List Property</a>
+        <a href="#contact" class="btn btn-primary">Get Started</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <p class="hero-tag">🏡 #1 Real Estate Platform</p>
+      <h1>Find Your Perfect<br /><span>Dream Home</span></h1>
+      <p class="hero-sub">Explore thousands of properties across the country. Buy, sell, or rent with confidence using our expert guidance.</p>
+
+      <!-- Search Bar -->
+      <div class="search-box">
+        <div class="search-tabs">
+          <button class="tab active" data-tab="buy">Buy</button>
+          <button class="tab" data-tab="rent">Rent</button>
+          <button class="tab" data-tab="sell">Sell</button>
+        </div>
+        <div class="search-fields">
+          <div class="field">
+            <label>Location</label>
+            <input type="text" placeholder="City, neighborhood, ZIP..." />
+          </div>
+          <div class="field">
+            <label>Property Type</label>
+            <select>
+              <option>Any Type</option>
+              <option>House</option>
+              <option>Apartment</option>
+              <option>Condo</option>
+              <option>Villa</option>
+              <option>Commercial</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Price Range</label>
+            <select>
+              <option>Any Price</option>
+              <option>$100k – $300k</option>
+              <option>$300k – $600k</option>
+              <option>$600k – $1M</option>
+              <option>$1M+</option>
+            </select>
+          </div>
+          <button class="btn btn-primary search-btn">🔍 Search</button>
+        </div>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat"><strong>12,400+</strong><span>Properties</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><strong>8,200+</strong><span>Happy Clients</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><strong>320+</strong><span>Expert Agents</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><strong>15 yrs</strong><span>Experience</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED LISTINGS -->
+  <section class="section" id="listings">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">Properties</p>
+        <h2>Featured Listings</h2>
+        <p class="section-sub">Hand-picked properties that match the highest standards of quality and value.</p>
+      </div>
+
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="house">Houses</button>
+        <button class="filter-btn" data-filter="apartment">Apartments</button>
+        <button class="filter-btn" data-filter="villa">Villas</button>
+        <button class="filter-btn" data-filter="commercial">Commercial</button>
+      </div>
+
+      <div class="listings-grid" id="listingsGrid">
+        <!-- Cards injected by JS -->
+      </div>
+
+      <div class="center-btn">
+        <a href="#" class="btn btn-outline-dark">View All Properties →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="section section-alt" id="services">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">Why Us</p>
+        <h2>Why Choose DarDZ</h2>
+        <p class="section-sub">We make buying, selling, and renting property simple, transparent, and stress-free.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🏠</div>
+          <h3>Verified Listings</h3>
+          <p>Every property is manually verified by our team to ensure accuracy and authenticity.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💼</div>
+          <h3>Expert Agents</h3>
+          <p>Our licensed agents bring years of local market knowledge to every transaction.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔒</div>
+          <h3>Secure Transactions</h3>
+          <p>End-to-end encrypted processes and legal support for complete peace of mind.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3>Market Insights</h3>
+          <p>Real-time data and analytics to help you make the smartest investment decisions.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📱</div>
+          <h3>Mobile Friendly</h3>
+          <p>Browse, save, and contact agents from any device, anywhere, anytime.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🤝</div>
+          <h3>24/7 Support</h3>
+          <p>Our dedicated support team is always available to answer your questions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BANNER -->
+  <section class="stats-banner">
+    <div class="container stats-inner">
+      <div class="stat-item">
+        <h3 class="counter" data-target="12400">0</h3>
+        <p>Properties Listed</p>
+      </div>
+      <div class="stat-item">
+        <h3 class="counter" data-target="8200">0</h3>
+        <p>Satisfied Clients</p>
+      </div>
+      <div class="stat-item">
+        <h3 class="counter" data-target="320">0</h3>
+        <p>Expert Agents</p>
+      </div>
+      <div class="stat-item">
+        <h3 class="counter" data-target="15">0</h3>
+        <p>Years of Experience</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- AGENTS -->
+  <section class="section" id="agents">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">Our Team</p>
+        <h2>Meet Our Top Agents</h2>
+        <p class="section-sub">Experienced professionals dedicated to finding you the perfect property.</p>
+      </div>
+      <div class="agents-grid">
+        <div class="agent-card">
+          <div class="agent-img" style="background: linear-gradient(135deg,#667eea,#764ba2)">
+            <span>SM</span>
+          </div>
+          <h3>Sarah Mitchell</h3>
+          <p class="agent-title">Senior Property Consultant</p>
+          <div class="agent-stats">
+            <span>🏠 142 Sales</span>
+            <span>⭐ 4.9</span>
+          </div>
+          <div class="agent-contact">
+            <a href="tel:+15551234567" class="btn btn-sm btn-outline-dark">📞 Call</a>
+            <a href="mailto:sarah@DarDZ.com" class="btn btn-sm btn-primary">✉ Email</a>
+          </div>
+        </div>
+        <div class="agent-card">
+          <div class="agent-img" style="background: linear-gradient(135deg,#f093fb,#f5576c)">
+            <span>JR</span>
+          </div>
+          <h3>James Rodriguez</h3>
+          <p class="agent-title">Luxury Homes Specialist</p>
+          <div class="agent-stats">
+            <span>🏠 98 Sales</span>
+            <span>⭐ 4.8</span>
+          </div>
+          <div class="agent-contact">
+            <a href="tel:+15559876543" class="btn btn-sm btn-outline-dark">📞 Call</a>
+            <a href="mailto:james@DarDZ.com" class="btn btn-sm btn-primary">✉ Email</a>
+          </div>
+        </div>
+        <div class="agent-card">
+          <div class="agent-img" style="background: linear-gradient(135deg,#4facfe,#00f2fe)">
+            <span>EK</span>
+          </div>
+          <h3>Emily Kim</h3>
+          <p class="agent-title">Commercial Real Estate Expert</p>
+          <div class="agent-stats">
+            <span>🏠 211 Sales</span>
+            <span>⭐ 5.0</span>
+          </div>
+          <div class="agent-contact">
+            <a href="tel:+15554561234" class="btn btn-sm btn-outline-dark">📞 Call</a>
+            <a href="mailto:emily@DarDZ.com" class="btn btn-sm btn-primary">✉ Email</a>
+          </div>
+        </div>
+        <div class="agent-card">
+          <div class="agent-img" style="background: linear-gradient(135deg,#43e97b,#38f9d7)">
+            <span>DW</span>
+          </div>
+          <h3>David Wilson</h3>
+          <p class="agent-title">First-Time Buyer Advisor</p>
+          <div class="agent-stats">
+            <span>🏠 76 Sales</span>
+            <span>⭐ 4.7</span>
+          </div>
+          <div class="agent-contact">
+            <a href="tel:+15557891234" class="btn btn-sm btn-outline-dark">📞 Call</a>
+            <a href="mailto:david@DarDZ.com" class="btn btn-sm btn-primary">✉ Email</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">Testimonials</p>
+        <h2>What Our Clients Say</h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"DarDZ made buying our first home an absolute breeze. Sarah was incredibly helpful and patient throughout the entire process."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background:#667eea">MJ</div>
+            <div>
+              <strong>Michael Johnson</strong>
+              <span>First-time Homebuyer</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"We sold our property 20% above asking price thanks to the team's market expertise and negotiation skills. Highly recommend!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background:#f5576c">LP</div>
+            <div>
+              <strong>Lisa Parker</strong>
+              <span>Property Seller</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"The commercial property search was seamless. Emily understood exactly what we needed and delivered beyond expectations."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background:#43e97b">RC</div>
+            <div>
+              <strong>Robert Chen</strong>
+              <span>Business Owner</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP -->
+  <section class="section section-alt" id="map">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">Explore</p>
+        <h2>Properties on the Map</h2>
+        <p class="section-sub">Browse our listings geographically and find properties in your preferred neighborhood.</p>
+      </div>
+      <div class="map-wrapper">
+        <div class="map-sidebar" id="mapSidebar">
+          <h3>📍 Listings</h3>
+          <div class="map-list" id="mapList"></div>
+        </div>
+        <div id="propertyMap"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="contact-wrapper">
+        <div class="contact-info">
+          <p class="section-tag">Contact Us</p>
+          <h2>Let's Find Your<br />Perfect Property</h2>
+          <p>Whether you're buying, selling, or renting, our team is ready to help you every step of the way.</p>
+          <div class="contact-details">
+            <div class="contact-item">
+              <span class="contact-icon">📍</span>
+              <div>
+                <strong>Office</strong>
+                <p>123 Realty Blvd, Suite 400<br />New York, NY 10001</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">📞</span>
+              <div>
+                <strong>Phone</strong>
+                <p>+1 (555) 123-4567</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">✉️</span>
+              <div>
+                <strong>Email</strong>
+                <p>hello@DarDZ.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <form class="contact-form" id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" placeholder="John" required />
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" placeholder="Doe" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="john@example.com" required />
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" placeholder="+1 (555) 000-0000" />
+          </div>
+          <div class="form-group">
+            <label>I'm interested in</label>
+            <select>
+              <option>Buying a Property</option>
+              <option>Selling a Property</option>
+              <option>Renting a Property</option>
+              <option>Investment Advice</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea rows="4" placeholder="Tell us about your requirements..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary full-width">Send Message →</button>
+          <p class="form-note" id="formNote"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIST YOUR PROPERTY -->
+  <section class="section" id="list-property">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">Sell or Rent</p>
+        <h2>List Your Property</h2>
+        <p class="section-sub">Reach thousands of buyers and renters. Fill in the details below and our team will publish your listing within 24 hours.</p>
+      </div>
+
+      <!-- Steps -->
+      <div class="lp-steps">
+        <div class="lp-step">
+          <div class="lp-step-num">1</div>
+          <h4>Fill the Form</h4>
+          <p>Provide your property details, photos, and asking price.</p>
+        </div>
+        <div class="lp-step-arrow">→</div>
+        <div class="lp-step">
+          <div class="lp-step-num">2</div>
+          <h4>We Verify</h4>
+          <p>Our team reviews and verifies your listing within 24 hours.</p>
+        </div>
+        <div class="lp-step-arrow">→</div>
+        <div class="lp-step">
+          <div class="lp-step-num">3</div>
+          <h4>Go Live</h4>
+          <p>Your property is published and visible to thousands of buyers.</p>
+        </div>
+      </div>
+
+      <!-- Listing Form -->
+      <div class="lp-form-wrapper">
+        <form class="lp-form" id="listPropertyForm" novalidate>
+
+          <!-- Section: Owner Info -->
+          <div class="lp-form-section">
+            <h3 class="lp-section-title">👤 Owner Information</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Full Name <span class="req">*</span></label>
+                <input type="text" id="lp-name" placeholder="e.g. Ahmed Benali" required />
+                <span class="field-error" id="err-lp-name"></span>
+              </div>
+              <div class="form-group">
+                <label>Phone Number <span class="req">*</span></label>
+                <input type="tel" id="lp-phone" placeholder="+213 6XX XXX XXX" required />
+                <span class="field-error" id="err-lp-phone"></span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Email Address <span class="req">*</span></label>
+              <input type="email" id="lp-email" placeholder="you@example.com" required />
+              <span class="field-error" id="err-lp-email"></span>
+            </div>
+          </div>
+
+          <!-- Section: Property Details -->
+          <div class="lp-form-section">
+            <h3 class="lp-section-title">🏠 Property Details</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Listing Type <span class="req">*</span></label>
+                <div class="toggle-group" id="lp-listing-type">
+                  <button type="button" class="toggle-btn active" data-value="sale">For Sale</button>
+                  <button type="button" class="toggle-btn" data-value="rent">For Rent</button>
+                </div>
+                <input type="hidden" id="lp-type" value="sale" />
+              </div>
+              <div class="form-group">
+                <label>Property Type <span class="req">*</span></label>
+                <select id="lp-prop-type" required>
+                  <option value="">Select type...</option>
+                  <option value="house">House / Villa</option>
+                  <option value="apartment">Apartment</option>
+                  <option value="studio">Studio</option>
+                  <option value="land">Land / Plot</option>
+                  <option value="commercial">Commercial</option>
+                  <option value="office">Office</option>
+                </select>
+                <span class="field-error" id="err-lp-prop-type"></span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Property Title <span class="req">*</span></label>
+              <input type="text" id="lp-title" placeholder="e.g. Modern 3-Bedroom Apartment in Algiers" required />
+              <span class="field-error" id="err-lp-title"></span>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>City / Wilaya <span class="req">*</span></label>
+                <input type="text" id="lp-city" placeholder="e.g. Algiers, Oran, Constantine..." required />
+                <span class="field-error" id="err-lp-city"></span>
+              </div>
+              <div class="form-group">
+                <label>Neighborhood / Address</label>
+                <input type="text" id="lp-address" placeholder="e.g. Hydra, Bab Ezzouar..." />
+              </div>
+            </div>
+          </div>
+
+          <!-- Section: Specs -->
+          <div class="lp-form-section">
+            <h3 class="lp-section-title">📐 Specifications</h3>
+            <div class="lp-specs-grid">
+              <div class="form-group">
+                <label>Price (DZD) <span class="req">*</span></label>
+                <input type="number" id="lp-price" placeholder="e.g. 15000000" min="0" required />
+                <span class="field-error" id="err-lp-price"></span>
+              </div>
+              <div class="form-group">
+                <label>Area (m²) <span class="req">*</span></label>
+                <input type="number" id="lp-area" placeholder="e.g. 120" min="1" required />
+                <span class="field-error" id="err-lp-area"></span>
+              </div>
+              <div class="form-group">
+                <label>Bedrooms</label>
+                <input type="number" id="lp-beds" placeholder="e.g. 3" min="0" />
+              </div>
+              <div class="form-group">
+                <label>Bathrooms</label>
+                <input type="number" id="lp-baths" placeholder="e.g. 2" min="0" />
+              </div>
+              <div class="form-group">
+                <label>Floor</label>
+                <input type="number" id="lp-floor" placeholder="e.g. 3" min="0" />
+              </div>
+              <div class="form-group">
+                <label>Year Built</label>
+                <input type="number" id="lp-year" placeholder="e.g. 2018" min="1900" max="2026" />
+              </div>
+            </div>
+
+            <!-- Amenities -->
+            <div class="form-group" style="margin-top:8px">
+              <label>Amenities</label>
+              <div class="amenities-grid">
+                <label class="amenity-check"><input type="checkbox" value="parking" /> 🚗 Parking</label>
+                <label class="amenity-check"><input type="checkbox" value="elevator" /> 🛗 Elevator</label>
+                <label class="amenity-check"><input type="checkbox" value="balcony" /> 🌿 Balcony</label>
+                <label class="amenity-check"><input type="checkbox" value="garden" /> 🌳 Garden</label>
+                <label class="amenity-check"><input type="checkbox" value="pool" /> 🏊 Pool</label>
+                <label class="amenity-check"><input type="checkbox" value="security" /> 🔒 Security</label>
+                <label class="amenity-check"><input type="checkbox" value="furnished" /> 🛋️ Furnished</label>
+                <label class="amenity-check"><input type="checkbox" value="ac" /> ❄️ Air Conditioning</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section: Description & Photos -->
+          <div class="lp-form-section">
+            <h3 class="lp-section-title">📝 Description & Photos</h3>
+            <div class="form-group">
+              <label>Description <span class="req">*</span></label>
+              <textarea id="lp-desc" rows="5" placeholder="Describe your property: condition, features, nearby landmarks, why it's a great deal..." required></textarea>
+              <span class="field-error" id="err-lp-desc"></span>
+              <span class="char-count" id="lp-desc-count">0 / 1000</span>
+            </div>
+            <div class="form-group">
+              <label>Property Photos</label>
+              <div class="photo-upload-area" id="photoUploadArea">
+                <input type="file" id="lp-photos" accept="image/*" multiple hidden />
+                <div class="photo-upload-placeholder" id="photoPlaceholder">
+                  <span class="upload-icon">📷</span>
+                  <p>Drag & drop photos here or <button type="button" class="upload-link" onclick="document.getElementById('lp-photos').click()">browse files</button></p>
+                  <p class="upload-hint">JPG, PNG up to 10MB each · Max 10 photos</p>
+                </div>
+                <div class="photo-previews" id="photoPreviews"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="lp-form-footer">
+            <label class="terms-check">
+              <input type="checkbox" id="lp-terms" required />
+              I agree to the <a href="#">Terms of Service</a> and confirm this listing is accurate.
+            </label>
+            <span class="field-error" id="err-lp-terms"></span>
+            <button type="submit" class="btn btn-primary lp-submit-btn">
+              <span id="lp-btn-text">🚀 Submit Listing</span>
+            </button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUCCESS MODAL -->
+  <div class="modal-overlay" id="successOverlay">
+    <div class="modal success-modal">
+      <div class="success-icon">🎉</div>
+      <h2>Listing Submitted!</h2>
+      <p>Thank you! Your property has been submitted for review. Our team will verify and publish it within <strong>24 hours</strong>. We'll notify you by email.</p>
+      <button class="btn btn-primary" onclick="document.getElementById('successOverlay').classList.remove('active');document.body.style.overflow=''">Done</button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#" class="logo">Dar<span>DZ</span></a>
+        <p>Your trusted partner in finding the perfect property. We make real estate simple, transparent, and rewarding.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Twitter">𝕏</a>
+          <a href="#" aria-label="Instagram">📷</a>
+          <a href="#" aria-label="LinkedIn">in</a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#listings">Listings</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#agents">Agents</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Property Types</h4>
+        <ul>
+          <li><a href="#">Houses</a></li>
+          <li><a href="#">Apartments</a></li>
+          <li><a href="#">Villas</a></li>
+          <li><a href="#">Commercial</a></li>
+          <li><a href="#">Land & Plots</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#">Mortgage Calculator</a></li>
+          <li><a href="#">Market Reports</a></li>
+          <li><a href="#">Buying Guide</a></li>
+          <li><a href="#">Selling Guide</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2026 DarDZ. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- PROPERTY MODAL -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="propertyModal">
+      <button class="modal-close" id="modalClose">✕</button>
+      <div class="modal-content" id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
