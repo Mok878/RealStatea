@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr" id="htmlRoot">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DarDZ – Find Your Dream Home</title>
+  <title>DarDZ - Find Your Dream Home</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
 
@@ -16,17 +16,22 @@
     <div class="container nav-inner">
       <a href="#" class="logo">Dar<span>DZ</span></a>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#listings">Listings</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#map">Map</a></li>
-        <li><a href="#agents">Agents</a></li>
-        <li><a href="#list-property">List Property</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#home" data-i18n="nav.home">Home</a></li>
+        <li><a href="#listings" data-i18n="nav.listings">Listings</a></li>
+        <li><a href="#services" data-i18n="nav.services">Services</a></li>
+        <li><a href="#map" data-i18n="nav.map">Map</a></li>
+        <li><a href="#agents" data-i18n="nav.agents">Agents</a></li>
+        <li><a href="#list-property" data-i18n="nav.listProperty">List Property</a></li>
+        <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
       </ul>
       <div class="nav-actions">
-        <a href="#list-property" class="btn btn-outline">List Property</a>
-        <a href="#contact" class="btn btn-primary">Get Started</a>
+        <div class="lang-switcher">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="fr">FR</button>
+          <button class="lang-btn" data-lang="ar">AR</button>
+        </div>
+        <a href="#list-property" class="btn btn-outline" data-i18n="nav.listBtn">List Property</a>
+        <a href="#contact" class="btn btn-primary" data-i18n="nav.startBtn">Get Started</a>
       </div>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu">
         <span></span><span></span><span></span>
@@ -38,134 +43,93 @@
   <section class="hero" id="home">
     <div class="hero-overlay"></div>
     <div class="container hero-content">
-      <p class="hero-tag">🏡 #1 منصة عقارية في الجزائر</p>
-      <h1>Find Your Perfect<br /><span>Home in Algeria</span></h1>
-      <p class="hero-sub">Explore thousands of properties across all 58 wilayas. Buy, sell, or rent with confidence using our expert local guidance.</p>
-
-      <!-- Search Bar -->
+      <p class="hero-tag" data-i18n="hero.tag">&#127969; #1 Real Estate Platform in Algeria</p>
+      <h1 data-i18n="hero.title">Find Your Perfect <span>Home in Algeria</span></h1>
+      <p class="hero-sub" data-i18n="hero.sub">Explore thousands of properties across all 58 wilayas. Buy, sell, or rent with confidence using our expert local guidance.</p>
       <div class="search-box">
         <div class="search-tabs">
-          <button class="tab active" data-tab="buy">Buy</button>
-          <button class="tab" data-tab="rent">Rent</button>
-          <button class="tab" data-tab="sell">Sell</button>
+          <button class="tab active" data-tab="buy" data-i18n="hero.tabBuy">Buy</button>
+          <button class="tab" data-tab="rent" data-i18n="hero.tabRent">Rent</button>
+          <button class="tab" data-tab="sell" data-i18n="hero.tabSell">Sell</button>
         </div>
         <div class="search-fields">
           <div class="field">
-            <label>Location</label>
+            <label data-i18n="hero.locLabel">Location</label>
             <select>
-              <option value="">Any Wilaya</option>
-              <option>Alger (01)</option>
-              <option>Chlef (02)</option>
-              <option>Laghouat (03)</option>
-              <option>Oum El Bouaghi (04)</option>
-              <option>Batna (05)</option>
-              <option>Béjaïa (06)</option>
-              <option>Biskra (07)</option>
-              <option>Béchar (08)</option>
-              <option>Blida (09)</option>
-              <option>Bouira (10)</option>
-              <option>Tamanrasset (11)</option>
-              <option>Tébessa (12)</option>
-              <option>Tlemcen (13)</option>
-              <option>Tiaret (14)</option>
-              <option>Tizi Ouzou (15)</option>
-              <option>Alger Centre (16)</option>
-              <option>Djelfa (17)</option>
-              <option>Jijel (18)</option>
-              <option>Sétif (19)</option>
-              <option>Saïda (20)</option>
-              <option>Skikda (21)</option>
-              <option>Sidi Bel Abbès (22)</option>
-              <option>Annaba (23)</option>
-              <option>Guelma (24)</option>
-              <option>Constantine (25)</option>
-              <option>Médéa (26)</option>
-              <option>Mostaganem (27)</option>
-              <option>M'Sila (28)</option>
-              <option>Mascara (29)</option>
-              <option>Ouargla (30)</option>
-              <option>Oran (31)</option>
-              <option>El Bayadh (32)</option>
-              <option>Illizi (33)</option>
-              <option>Bordj Bou Arréridj (34)</option>
-              <option>Boumerdès (35)</option>
-              <option>El Tarf (36)</option>
-              <option>Tindouf (37)</option>
-              <option>Tissemsilt (38)</option>
-              <option>El Oued (39)</option>
-              <option>Khenchela (40)</option>
-              <option>Souk Ahras (41)</option>
-              <option>Tipaza (42)</option>
-              <option>Mila (43)</option>
-              <option>Aïn Defla (44)</option>
-              <option>Naâma (45)</option>
-              <option>Aïn Témouchent (46)</option>
-              <option>Ghardaïa (47)</option>
-              <option>Relizane (48)</option>
+              <option value="" data-i18n="hero.locAny">Any Wilaya</option>
+              <option>Alger (01)</option><option>Chlef (02)</option><option>Laghouat (03)</option>
+              <option>Oum El Bouaghi (04)</option><option>Batna (05)</option><option>Bejaia (06)</option>
+              <option>Biskra (07)</option><option>Bechar (08)</option><option>Blida (09)</option>
+              <option>Bouira (10)</option><option>Tamanrasset (11)</option><option>Tebessa (12)</option>
+              <option>Tlemcen (13)</option><option>Tiaret (14)</option><option>Tizi Ouzou (15)</option>
+              <option>Alger Centre (16)</option><option>Djelfa (17)</option><option>Jijel (18)</option>
+              <option>Setif (19)</option><option>Saida (20)</option><option>Skikda (21)</option>
+              <option>Sidi Bel Abbes (22)</option><option>Annaba (23)</option><option>Guelma (24)</option>
+              <option>Constantine (25)</option><option>Medea (26)</option><option>Mostaganem (27)</option>
+              <option>M'Sila (28)</option><option>Mascara (29)</option><option>Ouargla (30)</option>
+              <option>Oran (31)</option><option>El Bayadh (32)</option><option>Illizi (33)</option>
+              <option>Bordj Bou Arreridj (34)</option><option>Boumerdes (35)</option><option>El Tarf (36)</option>
+              <option>Tindouf (37)</option><option>Tissemsilt (38)</option><option>El Oued (39)</option>
+              <option>Khenchela (40)</option><option>Souk Ahras (41)</option><option>Tipaza (42)</option>
+              <option>Mila (43)</option><option>Ain Defla (44)</option><option>Naama (45)</option>
+              <option>Ain Temouchent (46)</option><option>Ghardaia (47)</option><option>Relizane (48)</option>
             </select>
           </div>
           <div class="field">
-            <label>Property Type</label>
+            <label data-i18n="hero.typeLabel">Property Type</label>
             <select>
-              <option>Any Type</option>
-              <option>House / Villa</option>
-              <option>Apartment</option>
-              <option>Studio</option>
-              <option>Land / Plot</option>
-              <option>Commercial</option>
-              <option>Office</option>
+              <option data-i18n="hero.typeAny">Any Type</option>
+              <option data-i18n="hero.typeHouse">House / Villa</option>
+              <option data-i18n="hero.typeApt">Apartment</option>
+              <option data-i18n="hero.typeStudio">Studio</option>
+              <option data-i18n="hero.typeLand">Land / Plot</option>
+              <option data-i18n="hero.typeCommercial">Commercial</option>
+              <option data-i18n="hero.typeOffice">Office</option>
             </select>
           </div>
           <div class="field">
-            <label>Price Range (DZD)</label>
+            <label data-i18n="hero.priceLabel">Price Range (DZD)</label>
             <select>
-              <option>Any Price</option>
-              <option>Under 5M DA</option>
-              <option>5M – 15M DA</option>
-              <option>15M – 30M DA</option>
-              <option>30M – 60M DA</option>
-              <option>60M DA+</option>
+              <option data-i18n="hero.priceAny">Any Price</option>
+              <option data-i18n="hero.price1">Under 5M DA</option>
+              <option data-i18n="hero.price2">5M - 15M DA</option>
+              <option data-i18n="hero.price3">15M - 30M DA</option>
+              <option data-i18n="hero.price4">30M - 60M DA</option>
+              <option data-i18n="hero.price5">60M DA+</option>
             </select>
           </div>
-          <button class="btn btn-primary search-btn">🔍 Search</button>
+          <button class="btn btn-primary search-btn" data-i18n="hero.searchBtn">&#128269; Search</button>
         </div>
       </div>
-
       <div class="hero-stats">
-        <div class="stat"><strong>12,400+</strong><span>Properties</span></div>
+        <div class="stat"><strong>12,400+</strong><span data-i18n="hero.statProps">Properties</span></div>
         <div class="stat-divider"></div>
-        <div class="stat"><strong>8,200+</strong><span>Happy Clients</span></div>
+        <div class="stat"><strong>8,200+</strong><span data-i18n="hero.statClients">Happy Clients</span></div>
         <div class="stat-divider"></div>
-        <div class="stat"><strong>320+</strong><span>Expert Agents</span></div>
+        <div class="stat"><strong>320+</strong><span data-i18n="hero.statAgents">Expert Agents</span></div>
         <div class="stat-divider"></div>
-        <div class="stat"><strong>15 yrs</strong><span>Experience</span></div>
+        <div class="stat"><strong>15</strong><span data-i18n="hero.statExp">Years Experience</span></div>
       </div>
     </div>
   </section>
-
   <!-- FEATURED LISTINGS -->
   <section class="section" id="listings">
     <div class="container">
       <div class="section-header">
-        <p class="section-tag">Properties</p>
-        <h2>Featured Listings</h2>
-        <p class="section-sub">Hand-picked properties that match the highest standards of quality and value.</p>
+        <p class="section-tag" data-i18n="listings.tag">Properties</p>
+        <h2 data-i18n="listings.title">Featured Listings</h2>
+        <p class="section-sub" data-i18n="listings.sub">Hand-picked properties that match the highest standards of quality and value.</p>
       </div>
-
       <div class="filter-bar">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="house">Houses</button>
-        <button class="filter-btn" data-filter="apartment">Apartments</button>
-        <button class="filter-btn" data-filter="villa">Villas</button>
-        <button class="filter-btn" data-filter="commercial">Commercial</button>
+        <button class="filter-btn active" data-filter="all" data-i18n="filter.all">All</button>
+        <button class="filter-btn" data-filter="house" data-i18n="filter.houses">Houses</button>
+        <button class="filter-btn" data-filter="apartment" data-i18n="filter.apartments">Apartments</button>
+        <button class="filter-btn" data-filter="villa" data-i18n="filter.villas">Villas</button>
+        <button class="filter-btn" data-filter="commercial" data-i18n="filter.commercial">Commercial</button>
       </div>
-
-      <div class="listings-grid" id="listingsGrid">
-        <!-- Cards injected by JS -->
-      </div>
-
+      <div class="listings-grid" id="listingsGrid"></div>
       <div class="center-btn">
-        <a href="#" class="btn btn-outline-dark">View All Properties →</a>
+        <a href="#" class="btn btn-outline-dark" data-i18n="listings.viewAll">View All Properties</a>
       </div>
     </div>
   </section>
@@ -174,40 +138,40 @@
   <section class="section section-alt" id="services">
     <div class="container">
       <div class="section-header">
-        <p class="section-tag">Why Us</p>
-        <h2>Why Choose DarDZ</h2>
-        <p class="section-sub">We make buying, selling, and renting property simple, transparent, and stress-free.</p>
+        <p class="section-tag" data-i18n="services.tag">Why Us</p>
+        <h2 data-i18n="services.title">Why Choose DarDZ</h2>
+        <p class="section-sub" data-i18n="services.sub">We make buying, selling, and renting property simple, transparent, and stress-free.</p>
       </div>
       <div class="features-grid">
         <div class="feature-card">
-          <div class="feature-icon">🏠</div>
-          <h3>Verified Listings</h3>
-          <p>Every property is manually verified by our team to ensure accuracy and authenticity.</p>
+          <div class="feature-icon">&#127968;</div>
+          <h3 data-i18n="feat1.title">Verified Listings</h3>
+          <p data-i18n="feat1.desc">Every property is manually verified by our team to ensure accuracy and authenticity.</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">💼</div>
-          <h3>Expert Agents</h3>
-          <p>Our licensed agents bring years of local market knowledge to every transaction.</p>
+          <div class="feature-icon">&#128188;</div>
+          <h3 data-i18n="feat2.title">Expert Agents</h3>
+          <p data-i18n="feat2.desc">Our licensed agents bring years of local market knowledge to every transaction.</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">🔒</div>
-          <h3>Secure Transactions</h3>
-          <p>End-to-end encrypted processes and legal support for complete peace of mind.</p>
+          <div class="feature-icon">&#128274;</div>
+          <h3 data-i18n="feat3.title">Secure Transactions</h3>
+          <p data-i18n="feat3.desc">End-to-end encrypted processes and legal support for complete peace of mind.</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">📊</div>
-          <h3>Market Insights</h3>
-          <p>Real-time data and analytics to help you make the smartest investment decisions.</p>
+          <div class="feature-icon">&#128202;</div>
+          <h3 data-i18n="feat4.title">Market Insights</h3>
+          <p data-i18n="feat4.desc">Real-time data and analytics to help you make the smartest investment decisions.</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">📱</div>
-          <h3>Mobile Friendly</h3>
-          <p>Browse, save, and contact agents from any device, anywhere, anytime.</p>
+          <div class="feature-icon">&#128241;</div>
+          <h3 data-i18n="feat5.title">Mobile Friendly</h3>
+          <p data-i18n="feat5.desc">Browse, save, and contact agents from any device, anywhere, anytime.</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">🤝</div>
-          <h3>24/7 Support</h3>
-          <p>Our dedicated support team is always available to answer your questions.</p>
+          <div class="feature-icon">&#129309;</div>
+          <h3 data-i18n="feat6.title">24/7 Support</h3>
+          <p data-i18n="feat6.desc">Our dedicated support team is always available to answer your questions.</p>
         </div>
       </div>
     </div>
@@ -216,22 +180,10 @@
   <!-- STATS BANNER -->
   <section class="stats-banner">
     <div class="container stats-inner">
-      <div class="stat-item">
-        <h3 class="counter" data-target="12400">0</h3>
-        <p>Properties Listed</p>
-      </div>
-      <div class="stat-item">
-        <h3 class="counter" data-target="8200">0</h3>
-        <p>Satisfied Clients</p>
-      </div>
-      <div class="stat-item">
-        <h3 class="counter" data-target="320">0</h3>
-        <p>Expert Agents</p>
-      </div>
-      <div class="stat-item">
-        <h3 class="counter" data-target="15">0</h3>
-        <p>Years of Experience</p>
-      </div>
+      <div class="stat-item"><h3 class="counter" data-target="12400">0</h3><p data-i18n="stats.props">Properties Listed</p></div>
+      <div class="stat-item"><h3 class="counter" data-target="8200">0</h3><p data-i18n="stats.clients">Satisfied Clients</p></div>
+      <div class="stat-item"><h3 class="counter" data-target="320">0</h3><p data-i18n="stats.agents">Expert Agents</p></div>
+      <div class="stat-item"><h3 class="counter" data-target="15">0</h3><p data-i18n="stats.exp">Years of Experience</p></div>
     </div>
   </section>
 
@@ -239,69 +191,49 @@
   <section class="section" id="agents">
     <div class="container">
       <div class="section-header">
-        <p class="section-tag">Our Team</p>
-        <h2>Meet Our Top Agents</h2>
-        <p class="section-sub">Experienced professionals dedicated to finding you the perfect property.</p>
+        <p class="section-tag" data-i18n="agents.tag">Our Team</p>
+        <h2 data-i18n="agents.title">Meet Our Top Agents</h2>
+        <p class="section-sub" data-i18n="agents.sub">Experienced professionals dedicated to finding you the perfect property.</p>
       </div>
       <div class="agents-grid">
         <div class="agent-card">
-          <div class="agent-img" style="background: linear-gradient(135deg,#667eea,#764ba2)">
-            <span>AB</span>
-          </div>
+          <div class="agent-img" style="background:linear-gradient(135deg,#667eea,#764ba2)"><span>AB</span></div>
           <h3>Ahmed Benali</h3>
-          <p class="agent-title">Senior Property Consultant – Alger</p>
-          <div class="agent-stats">
-            <span>🏠 142 Sales</span>
-            <span>⭐ 4.9</span>
-          </div>
+          <p class="agent-title" data-i18n="agent1.title">Senior Property Consultant - Alger</p>
+          <div class="agent-stats"><span>&#127968; 142 <span data-i18n="agent.salesWord">Sales</span></span><span>&#11088; 4.9</span></div>
           <div class="agent-contact">
-            <a href="tel:+213550123456" class="btn btn-sm btn-outline-dark">📞 Call</a>
-            <a href="mailto:ahmed@DarDZ.com" class="btn btn-sm btn-primary">✉ Email</a>
+            <a href="tel:+213550123456" class="btn btn-sm btn-outline-dark">&#128222; <span data-i18n="agent.call">Call</span></a>
+            <a href="mailto:ahmed@DarDZ.com" class="btn btn-sm btn-primary">&#9993; <span data-i18n="agent.email">Email</span></a>
           </div>
         </div>
         <div class="agent-card">
-          <div class="agent-img" style="background: linear-gradient(135deg,#f093fb,#f5576c)">
-            <span>SM</span>
-          </div>
+          <div class="agent-img" style="background:linear-gradient(135deg,#f093fb,#f5576c)"><span>SM</span></div>
           <h3>Samira Meziane</h3>
-          <p class="agent-title">Luxury Homes Specialist – Oran</p>
-          <div class="agent-stats">
-            <span>🏠 98 Sales</span>
-            <span>⭐ 4.8</span>
-          </div>
+          <p class="agent-title" data-i18n="agent2.title">Luxury Homes Specialist - Oran</p>
+          <div class="agent-stats"><span>&#127968; 98 <span data-i18n="agent.salesWord">Sales</span></span><span>&#11088; 4.8</span></div>
           <div class="agent-contact">
-            <a href="tel:+213661987654" class="btn btn-sm btn-outline-dark">📞 Call</a>
-            <a href="mailto:samira@DarDZ.com" class="btn btn-sm btn-primary">✉ Email</a>
+            <a href="tel:+213661987654" class="btn btn-sm btn-outline-dark">&#128222; <span data-i18n="agent.call">Call</span></a>
+            <a href="mailto:samira@DarDZ.com" class="btn btn-sm btn-primary">&#9993; <span data-i18n="agent.email">Email</span></a>
           </div>
         </div>
         <div class="agent-card">
-          <div class="agent-img" style="background: linear-gradient(135deg,#4facfe,#00f2fe)">
-            <span>KH</span>
-          </div>
+          <div class="agent-img" style="background:linear-gradient(135deg,#4facfe,#00f2fe)"><span>KH</span></div>
           <h3>Karim Hadj</h3>
-          <p class="agent-title">Commercial Real Estate – Constantine</p>
-          <div class="agent-stats">
-            <span>🏠 211 Sales</span>
-            <span>⭐ 5.0</span>
-          </div>
+          <p class="agent-title" data-i18n="agent3.title">Commercial Real Estate - Constantine</p>
+          <div class="agent-stats"><span>&#127968; 211 <span data-i18n="agent.salesWord">Sales</span></span><span>&#11088; 5.0</span></div>
           <div class="agent-contact">
-            <a href="tel:+213770456123" class="btn btn-sm btn-outline-dark">📞 Call</a>
-            <a href="mailto:karim@DarDZ.com" class="btn btn-sm btn-primary">✉ Email</a>
+            <a href="tel:+213770456123" class="btn btn-sm btn-outline-dark">&#128222; <span data-i18n="agent.call">Call</span></a>
+            <a href="mailto:karim@DarDZ.com" class="btn btn-sm btn-primary">&#9993; <span data-i18n="agent.email">Email</span></a>
           </div>
         </div>
         <div class="agent-card">
-          <div class="agent-img" style="background: linear-gradient(135deg,#43e97b,#38f9d7)">
-            <span>NB</span>
-          </div>
+          <div class="agent-img" style="background:linear-gradient(135deg,#43e97b,#38f9d7)"><span>NB</span></div>
           <h3>Nadia Boudiaf</h3>
-          <p class="agent-title">First-Time Buyer Advisor – Annaba</p>
-          <div class="agent-stats">
-            <span>🏠 76 Sales</span>
-            <span>⭐ 4.7</span>
-          </div>
+          <p class="agent-title" data-i18n="agent4.title">First-Time Buyer Advisor - Annaba</p>
+          <div class="agent-stats"><span>&#127968; 76 <span data-i18n="agent.salesWord">Sales</span></span><span>&#11088; 4.7</span></div>
           <div class="agent-contact">
-            <a href="tel:+213555789123" class="btn btn-sm btn-outline-dark">📞 Call</a>
-            <a href="mailto:nadia@DarDZ.com" class="btn btn-sm btn-primary">✉ Email</a>
+            <a href="tel:+213555789123" class="btn btn-sm btn-outline-dark">&#128222; <span data-i18n="agent.call">Call</span></a>
+            <a href="mailto:nadia@DarDZ.com" class="btn btn-sm btn-primary">&#9993; <span data-i18n="agent.email">Email</span></a>
           </div>
         </div>
       </div>
@@ -312,58 +244,48 @@
   <section class="section section-alt">
     <div class="container">
       <div class="section-header">
-        <p class="section-tag">Testimonials</p>
-        <h2>What Our Clients Say</h2>
+        <p class="section-tag" data-i18n="test.tag">Testimonials</p>
+        <h2 data-i18n="test.title">What Our Clients Say</h2>
       </div>
       <div class="testimonials-grid">
         <div class="testimonial-card">
-          <div class="stars">★★★★★</div>
-          <p>"DarDZ made buying our first apartment in Alger Centre so easy. Ahmed was incredibly helpful and guided us through every step of the process."</p>
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p data-i18n="test1.text">"DarDZ made buying our first apartment in Alger Centre so easy. Ahmed was incredibly helpful and guided us through every step."</p>
           <div class="testimonial-author">
             <div class="author-avatar" style="background:#667eea">YB</div>
-            <div>
-              <strong>Yacine Bensalem</strong>
-              <span>First-time Buyer, Alger</span>
-            </div>
+            <div><strong>Yacine Bensalem</strong><span data-i18n="test1.role">First-time Buyer, Alger</span></div>
           </div>
         </div>
         <div class="testimonial-card">
-          <div class="stars">★★★★★</div>
-          <p>"We sold our villa in Oran 15% above asking price thanks to Samira's deep knowledge of the local market. Highly recommend DarDZ!"</p>
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p data-i18n="test2.text">"We sold our villa in Oran 15% above asking price thanks to Samira's deep knowledge of the local market. Highly recommend DarDZ!"</p>
           <div class="testimonial-author">
             <div class="author-avatar" style="background:#f5576c">FH</div>
-            <div>
-              <strong>Fatima Hadjadj</strong>
-              <span>Property Seller, Oran</span>
-            </div>
+            <div><strong>Fatima Hadjadj</strong><span data-i18n="test2.role">Property Seller, Oran</span></div>
           </div>
         </div>
         <div class="testimonial-card">
-          <div class="stars">★★★★★</div>
-          <p>"Found the perfect commercial space in Constantine for my business. Karim understood exactly what I needed and delivered beyond expectations."</p>
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p data-i18n="test3.text">"Found the perfect commercial space in Constantine for my business. Karim understood exactly what I needed."</p>
           <div class="testimonial-author">
             <div class="author-avatar" style="background:#43e97b">MK</div>
-            <div>
-              <strong>Mohamed Khelifi</strong>
-              <span>Business Owner, Constantine</span>
-            </div>
+            <div><strong>Mohamed Khelifi</strong><span data-i18n="test3.role">Business Owner, Constantine</span></div>
           </div>
         </div>
       </div>
     </div>
   </section>
-
   <!-- MAP -->
   <section class="section section-alt" id="map">
     <div class="container">
       <div class="section-header">
-        <p class="section-tag">Explore</p>
-        <h2>Properties on the Map</h2>
-        <p class="section-sub">Browse our listings geographically and find properties in your preferred neighborhood.</p>
+        <p class="section-tag" data-i18n="map.tag">Explore</p>
+        <h2 data-i18n="map.title">Properties on the Map</h2>
+        <p class="section-sub" data-i18n="map.sub">Browse our listings geographically and find properties in your preferred neighborhood.</p>
       </div>
       <div class="map-wrapper">
         <div class="map-sidebar" id="mapSidebar">
-          <h3>📍 Listings</h3>
+          <h3 data-i18n="map.listings">&#128205; Listings</h3>
           <div class="map-list" id="mapList"></div>
         </div>
         <div id="propertyMap"></div>
@@ -376,28 +298,28 @@
     <div class="container">
       <div class="contact-wrapper">
         <div class="contact-info">
-          <p class="section-tag">Contact Us</p>
-          <h2>Let's Find Your<br />Perfect Property</h2>
-          <p>Whether you're buying, selling, or renting in Algeria, our team is ready to help you every step of the way.</p>
+          <p class="section-tag" data-i18n="contact.tag">Contact Us</p>
+          <h2 data-i18n="contact.title">Let's Find Your Perfect Property</h2>
+          <p data-i18n="contact.sub">Whether you're buying, selling, or renting in Algeria, our team is ready to help you every step of the way.</p>
           <div class="contact-details">
             <div class="contact-item">
-              <span class="contact-icon">📍</span>
+              <span class="contact-icon">&#128205;</span>
               <div>
-                <strong>Office</strong>
-                <p>12 Rue Didouche Mourad<br />Alger Centre, 16000, Algeria</p>
+                <strong data-i18n="contact.officeLabel">Office</strong>
+                <p data-i18n="contact.officeAddr">12 Rue Didouche Mourad, Alger Centre, 16000</p>
               </div>
             </div>
             <div class="contact-item">
-              <span class="contact-icon">📞</span>
+              <span class="contact-icon">&#128222;</span>
               <div>
-                <strong>Phone</strong>
+                <strong data-i18n="contact.phoneLabel">Phone</strong>
                 <p>+213 (0) 23 45 67 89</p>
               </div>
             </div>
             <div class="contact-item">
-              <span class="contact-icon">✉️</span>
+              <span class="contact-icon">&#9993;&#65039;</span>
               <div>
-                <strong>Email</strong>
+                <strong data-i18n="contact.emailLabel">Email</strong>
                 <p>hello@DarDZ.com</p>
               </div>
             </div>
@@ -406,36 +328,36 @@
         <form class="contact-form" id="contactForm">
           <div class="form-row">
             <div class="form-group">
-              <label>First Name</label>
-              <input type="text" placeholder="Ahmed" required />
+              <label data-i18n="contact.firstName">First Name</label>
+              <input type="text" data-i18n="contact.phFirst" placeholder="Ahmed" required />
             </div>
             <div class="form-group">
-              <label>Last Name</label>
-              <input type="text" placeholder="Benali" required />
+              <label data-i18n="contact.lastName">Last Name</label>
+              <input type="text" data-i18n="contact.phLast" placeholder="Benali" required />
             </div>
           </div>
           <div class="form-group">
-            <label>Email Address</label>
-            <input type="email" placeholder="ahmed@example.com" required />
+            <label data-i18n="contact.emailField">Email Address</label>
+            <input type="email" data-i18n="contact.phEmail" placeholder="ahmed@example.com" required />
           </div>
           <div class="form-group">
-            <label>Phone Number</label>
+            <label data-i18n="contact.phoneField">Phone Number</label>
             <input type="tel" placeholder="+213 6XX XXX XXX" />
           </div>
           <div class="form-group">
-            <label>I'm interested in</label>
+            <label data-i18n="contact.interest">I'm interested in</label>
             <select>
-              <option>Buying a Property</option>
-              <option>Selling a Property</option>
-              <option>Renting a Property</option>
-              <option>Investment Advice</option>
+              <option data-i18n="contact.opt1">Buying a Property</option>
+              <option data-i18n="contact.opt2">Selling a Property</option>
+              <option data-i18n="contact.opt3">Renting a Property</option>
+              <option data-i18n="contact.opt4">Investment Advice</option>
             </select>
           </div>
           <div class="form-group">
-            <label>Message</label>
-            <textarea rows="4" placeholder="Tell us about your requirements..."></textarea>
+            <label data-i18n="contact.message">Message</label>
+            <textarea rows="4" data-i18n="contact.phMsg" placeholder="Tell us about your requirements..."></textarea>
           </div>
-          <button type="submit" class="btn btn-primary full-width">Send Message →</button>
+          <button type="submit" class="btn btn-primary full-width" data-i18n="contact.send">Send Message</button>
           <p class="form-note" id="formNote"></p>
         </form>
       </div>
@@ -446,184 +368,166 @@
   <section class="section" id="list-property">
     <div class="container">
       <div class="section-header">
-        <p class="section-tag">Sell or Rent</p>
-        <h2>List Your Property</h2>
-        <p class="section-sub">Reach thousands of buyers and renters. Fill in the details below and our team will publish your listing within 24 hours.</p>
+        <p class="section-tag" data-i18n="lp.tag">Sell or Rent</p>
+        <h2 data-i18n="lp.title">List Your Property</h2>
+        <p class="section-sub" data-i18n="lp.sub">Reach thousands of buyers and renters. Fill in the details below and our team will publish your listing within 24 hours.</p>
       </div>
-
-      <!-- Steps -->
       <div class="lp-steps">
         <div class="lp-step">
           <div class="lp-step-num">1</div>
-          <h4>Fill the Form</h4>
-          <p>Provide your property details, photos, and asking price.</p>
+          <h4 data-i18n="lp.step1title">Fill the Form</h4>
+          <p data-i18n="lp.step1desc">Provide your property details, photos, and asking price.</p>
         </div>
-        <div class="lp-step-arrow">→</div>
+        <div class="lp-step-arrow">&#8594;</div>
         <div class="lp-step">
           <div class="lp-step-num">2</div>
-          <h4>We Verify</h4>
-          <p>Our team reviews and verifies your listing within 24 hours.</p>
+          <h4 data-i18n="lp.step2title">We Verify</h4>
+          <p data-i18n="lp.step2desc">Our team reviews and verifies your listing within 24 hours.</p>
         </div>
-        <div class="lp-step-arrow">→</div>
+        <div class="lp-step-arrow">&#8594;</div>
         <div class="lp-step">
           <div class="lp-step-num">3</div>
-          <h4>Go Live</h4>
-          <p>Your property is published and visible to thousands of buyers.</p>
+          <h4 data-i18n="lp.step3title">Go Live</h4>
+          <p data-i18n="lp.step3desc">Your property is published and visible to thousands of buyers.</p>
         </div>
       </div>
-
-      <!-- Listing Form -->
       <div class="lp-form-wrapper">
         <form class="lp-form" id="listPropertyForm" novalidate>
-
-          <!-- Section: Owner Info -->
           <div class="lp-form-section">
-            <h3 class="lp-section-title">👤 Owner Information</h3>
+            <h3 class="lp-section-title">&#128100; <span data-i18n="lp.ownerSection">Owner Information</span></h3>
             <div class="form-row">
               <div class="form-group">
-                <label>Full Name <span class="req">*</span></label>
-                <input type="text" id="lp-name" placeholder="e.g. Ahmed Benali" required />
+                <label data-i18n="lp.fullName">Full Name <span class="req">*</span></label>
+                <input type="text" id="lp-name" placeholder="Ahmed Benali" required />
                 <span class="field-error" id="err-lp-name"></span>
               </div>
               <div class="form-group">
-                <label>Phone Number <span class="req">*</span></label>
+                <label data-i18n="lp.phoneLbl">Phone Number <span class="req">*</span></label>
                 <input type="tel" id="lp-phone" placeholder="+213 6XX XXX XXX" required />
                 <span class="field-error" id="err-lp-phone"></span>
               </div>
             </div>
             <div class="form-group">
-              <label>Email Address <span class="req">*</span></label>
+              <label data-i18n="lp.emailLbl">Email Address <span class="req">*</span></label>
               <input type="email" id="lp-email" placeholder="you@example.com" required />
               <span class="field-error" id="err-lp-email"></span>
             </div>
           </div>
-
-          <!-- Section: Property Details -->
           <div class="lp-form-section">
-            <h3 class="lp-section-title">🏠 Property Details</h3>
+            <h3 class="lp-section-title">&#127968; <span data-i18n="lp.detailsSection">Property Details</span></h3>
             <div class="form-row">
               <div class="form-group">
-                <label>Listing Type <span class="req">*</span></label>
+                <label data-i18n="lp.listingType">Listing Type <span class="req">*</span></label>
                 <div class="toggle-group" id="lp-listing-type">
-                  <button type="button" class="toggle-btn active" data-value="sale">For Sale</button>
-                  <button type="button" class="toggle-btn" data-value="rent">For Rent</button>
+                  <button type="button" class="toggle-btn active" data-value="sale" data-i18n="lp.forSale">For Sale</button>
+                  <button type="button" class="toggle-btn" data-value="rent" data-i18n="lp.forRent">For Rent</button>
                 </div>
                 <input type="hidden" id="lp-type" value="sale" />
               </div>
               <div class="form-group">
-                <label>Property Type <span class="req">*</span></label>
+                <label data-i18n="lp.propType">Property Type <span class="req">*</span></label>
                 <select id="lp-prop-type" required>
-                  <option value="">Select type...</option>
-                  <option value="house">House / Villa</option>
-                  <option value="apartment">Apartment</option>
-                  <option value="studio">Studio</option>
-                  <option value="land">Land / Plot</option>
-                  <option value="commercial">Commercial</option>
-                  <option value="office">Office</option>
+                  <option value="" data-i18n="lp.selectType">Select type...</option>
+                  <option value="house" data-i18n="lp.optHouse">House / Villa</option>
+                  <option value="apartment" data-i18n="lp.optApt">Apartment</option>
+                  <option value="studio" data-i18n="lp.optStudio">Studio</option>
+                  <option value="land" data-i18n="lp.optLand">Land / Plot</option>
+                  <option value="commercial" data-i18n="lp.optCommercial">Commercial</option>
+                  <option value="office" data-i18n="lp.optOffice">Office</option>
                 </select>
                 <span class="field-error" id="err-lp-prop-type"></span>
               </div>
             </div>
             <div class="form-group">
-              <label>Property Title <span class="req">*</span></label>
+              <label data-i18n="lp.propTitle">Property Title <span class="req">*</span></label>
               <input type="text" id="lp-title" placeholder="e.g. Modern 3-Bedroom Apartment in Algiers" required />
               <span class="field-error" id="err-lp-title"></span>
             </div>
             <div class="form-row">
               <div class="form-group">
-                <label>City / Wilaya <span class="req">*</span></label>
-                <input type="text" id="lp-city" placeholder="e.g. Algiers, Oran, Constantine..." required />
+                <label data-i18n="lp.city">City / Wilaya <span class="req">*</span></label>
+                <input type="text" id="lp-city" placeholder="Algiers, Oran, Constantine..." required />
                 <span class="field-error" id="err-lp-city"></span>
               </div>
               <div class="form-group">
-                <label>Neighborhood / Address</label>
-                <input type="text" id="lp-address" placeholder="e.g. Hydra, Bab Ezzouar..." />
+                <label data-i18n="lp.neighborhood">Neighborhood / Address</label>
+                <input type="text" id="lp-address" placeholder="Hydra, Bab Ezzouar..." />
               </div>
             </div>
           </div>
-
-          <!-- Section: Specs -->
           <div class="lp-form-section">
-            <h3 class="lp-section-title">📐 Specifications</h3>
+            <h3 class="lp-section-title">&#128208; <span data-i18n="lp.specsSection">Specifications</span></h3>
             <div class="lp-specs-grid">
               <div class="form-group">
-                <label>Price (DZD) <span class="req">*</span></label>
-                <input type="number" id="lp-price" placeholder="e.g. 15000000" min="0" required />
+                <label data-i18n="lp.price">Price (DZD) <span class="req">*</span></label>
+                <input type="number" id="lp-price" placeholder="15000000" min="0" required />
                 <span class="field-error" id="err-lp-price"></span>
               </div>
               <div class="form-group">
-                <label>Area (m²) <span class="req">*</span></label>
-                <input type="number" id="lp-area" placeholder="e.g. 120" min="1" required />
+                <label data-i18n="lp.area">Area (m2) <span class="req">*</span></label>
+                <input type="number" id="lp-area" placeholder="120" min="1" required />
                 <span class="field-error" id="err-lp-area"></span>
               </div>
               <div class="form-group">
-                <label>Bedrooms</label>
-                <input type="number" id="lp-beds" placeholder="e.g. 3" min="0" />
+                <label data-i18n="lp.beds">Bedrooms</label>
+                <input type="number" id="lp-beds" placeholder="3" min="0" />
               </div>
               <div class="form-group">
-                <label>Bathrooms</label>
-                <input type="number" id="lp-baths" placeholder="e.g. 2" min="0" />
+                <label data-i18n="lp.baths">Bathrooms</label>
+                <input type="number" id="lp-baths" placeholder="2" min="0" />
               </div>
               <div class="form-group">
-                <label>Floor</label>
-                <input type="number" id="lp-floor" placeholder="e.g. 3" min="0" />
+                <label data-i18n="lp.floor">Floor</label>
+                <input type="number" id="lp-floor" placeholder="3" min="0" />
               </div>
               <div class="form-group">
-                <label>Year Built</label>
-                <input type="number" id="lp-year" placeholder="e.g. 2018" min="1900" max="2026" />
+                <label data-i18n="lp.year">Year Built</label>
+                <input type="number" id="lp-year" placeholder="2018" min="1900" max="2026" />
               </div>
             </div>
-
-            <!-- Amenities -->
             <div class="form-group" style="margin-top:8px">
-              <label>Amenities</label>
+              <label data-i18n="lp.amenities">Amenities</label>
               <div class="amenities-grid">
-                <label class="amenity-check"><input type="checkbox" value="parking" /> 🚗 Parking</label>
-                <label class="amenity-check"><input type="checkbox" value="elevator" /> 🛗 Elevator</label>
-                <label class="amenity-check"><input type="checkbox" value="balcony" /> 🌿 Balcony</label>
-                <label class="amenity-check"><input type="checkbox" value="garden" /> 🌳 Garden</label>
-                <label class="amenity-check"><input type="checkbox" value="pool" /> 🏊 Pool</label>
-                <label class="amenity-check"><input type="checkbox" value="security" /> 🔒 Security</label>
-                <label class="amenity-check"><input type="checkbox" value="furnished" /> 🛋️ Furnished</label>
-                <label class="amenity-check"><input type="checkbox" value="ac" /> ❄️ Air Conditioning</label>
+                <label class="amenity-check"><input type="checkbox" value="parking" /> &#128663; <span data-i18n="am.parking">Parking</span></label>
+                <label class="amenity-check"><input type="checkbox" value="elevator" /> &#128663; <span data-i18n="am.elevator">Elevator</span></label>
+                <label class="amenity-check"><input type="checkbox" value="balcony" /> &#127807; <span data-i18n="am.balcony">Balcony</span></label>
+                <label class="amenity-check"><input type="checkbox" value="garden" /> &#127795; <span data-i18n="am.garden">Garden</span></label>
+                <label class="amenity-check"><input type="checkbox" value="pool" /> &#127946; <span data-i18n="am.pool">Pool</span></label>
+                <label class="amenity-check"><input type="checkbox" value="security" /> &#128274; <span data-i18n="am.security">Security</span></label>
+                <label class="amenity-check"><input type="checkbox" value="furnished" /> &#128715; <span data-i18n="am.furnished">Furnished</span></label>
+                <label class="amenity-check"><input type="checkbox" value="ac" /> &#10052;&#65039; <span data-i18n="am.ac">Air Conditioning</span></label>
               </div>
             </div>
           </div>
-
-          <!-- Section: Description & Photos -->
           <div class="lp-form-section">
-            <h3 class="lp-section-title">📝 Description & Photos</h3>
+            <h3 class="lp-section-title">&#128221; <span data-i18n="lp.descSection">Description &amp; Photos</span></h3>
             <div class="form-group">
-              <label>Description <span class="req">*</span></label>
-              <textarea id="lp-desc" rows="5" placeholder="Describe your property: condition, features, nearby landmarks, why it's a great deal..." required></textarea>
+              <label data-i18n="lp.desc">Description <span class="req">*</span></label>
+              <textarea id="lp-desc" rows="5" placeholder="Describe your property..." required></textarea>
               <span class="field-error" id="err-lp-desc"></span>
               <span class="char-count" id="lp-desc-count">0 / 1000</span>
             </div>
             <div class="form-group">
-              <label>Property Photos</label>
+              <label data-i18n="lp.photos">Property Photos</label>
               <div class="photo-upload-area" id="photoUploadArea">
                 <input type="file" id="lp-photos" accept="image/*" multiple hidden />
                 <div class="photo-upload-placeholder" id="photoPlaceholder">
-                  <span class="upload-icon">📷</span>
-                  <p>Drag & drop photos here or <button type="button" class="upload-link" onclick="document.getElementById('lp-photos').click()">browse files</button></p>
-                  <p class="upload-hint">JPG, PNG up to 10MB each · Max 10 photos</p>
+                  <span class="upload-icon">&#128247;</span>
+                  <p>Drag &amp; drop photos here or <button type="button" class="upload-link" onclick="document.getElementById('lp-photos').click()">browse files</button></p>
+                  <p class="upload-hint" data-i18n="lp.photoHint">JPG, PNG up to 10MB each - Max 10 photos</p>
                 </div>
                 <div class="photo-previews" id="photoPreviews"></div>
               </div>
             </div>
           </div>
-
           <div class="lp-form-footer">
             <label class="terms-check">
               <input type="checkbox" id="lp-terms" required />
-              I agree to the <a href="#">Terms of Service</a> and confirm this listing is accurate.
+              <span data-i18n="lp.terms">I agree to the</span> <a href="#" data-i18n="lp.termsLink">Terms of Service</a>
             </label>
             <span class="field-error" id="err-lp-terms"></span>
-            <button type="submit" class="btn btn-primary lp-submit-btn">
-              <span id="lp-btn-text">🚀 Submit Listing</span>
-            </button>
+            <button type="submit" class="btn btn-primary lp-submit-btn" data-i18n="lp.submit">&#128640; Submit Listing</button>
           </div>
-
         </form>
       </div>
     </div>
@@ -632,10 +536,10 @@
   <!-- SUCCESS MODAL -->
   <div class="modal-overlay" id="successOverlay">
     <div class="modal success-modal">
-      <div class="success-icon">🎉</div>
-      <h2>Listing Submitted!</h2>
-      <p>Thank you! Your property has been submitted for review. Our team will verify and publish it within <strong>24 hours</strong>. We'll notify you by email.</p>
-      <button class="btn btn-primary" onclick="document.getElementById('successOverlay').classList.remove('active');document.body.style.overflow=''">Done</button>
+      <div class="success-icon">&#127881;</div>
+      <h2 data-i18n="success.title">Listing Submitted!</h2>
+      <p data-i18n="success.msg">Thank you! Your property has been submitted for review. Our team will verify and publish it within 24 hours.</p>
+      <button class="btn btn-primary" data-i18n="success.done" onclick="document.getElementById('successOverlay').classList.remove('active');document.body.style.overflow=''">Done</button>
     </div>
   </div>
 
@@ -644,52 +548,52 @@
     <div class="container footer-inner">
       <div class="footer-brand">
         <a href="#" class="logo">Dar<span>DZ</span></a>
-        <p>Your trusted partner for real estate across all 58 wilayas of Algeria. We make buying, selling, and renting simple and transparent.</p>
+        <p data-i18n="footer.desc">Your trusted partner for real estate across all 58 wilayas of Algeria.</p>
         <div class="social-links">
           <a href="#" aria-label="Facebook">f</a>
-          <a href="#" aria-label="Twitter">𝕏</a>
-          <a href="#" aria-label="Instagram">📷</a>
+          <a href="#" aria-label="Twitter">X</a>
+          <a href="#" aria-label="Instagram">&#128247;</a>
           <a href="#" aria-label="LinkedIn">in</a>
         </div>
       </div>
       <div class="footer-links">
-        <h4>Quick Links</h4>
+        <h4 data-i18n="footer.quickLinks">Quick Links</h4>
         <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#listings">Listings</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#agents">Agents</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#home" data-i18n="nav.home">Home</a></li>
+          <li><a href="#listings" data-i18n="nav.listings">Listings</a></li>
+          <li><a href="#services" data-i18n="nav.services">Services</a></li>
+          <li><a href="#agents" data-i18n="nav.agents">Agents</a></li>
+          <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
         </ul>
       </div>
       <div class="footer-links">
-        <h4>Property Types</h4>
+        <h4 data-i18n="footer.propTypes">Property Types</h4>
         <ul>
-          <li><a href="#">Houses</a></li>
-          <li><a href="#">Apartments</a></li>
-          <li><a href="#">Villas</a></li>
-          <li><a href="#">Commercial</a></li>
-          <li><a href="#">Land & Plots</a></li>
+          <li><a href="#" data-i18n="footer.pt1">Houses</a></li>
+          <li><a href="#" data-i18n="footer.pt2">Apartments</a></li>
+          <li><a href="#" data-i18n="footer.pt3">Villas</a></li>
+          <li><a href="#" data-i18n="footer.pt4">Commercial</a></li>
+          <li><a href="#" data-i18n="footer.pt5">Land &amp; Plots</a></li>
         </ul>
       </div>
       <div class="footer-links">
-        <h4>Resources</h4>
+        <h4 data-i18n="footer.resources">Resources</h4>
         <ul>
-          <li><a href="#">Mortgage Calculator</a></li>
-          <li><a href="#">Market Reports</a></li>
-          <li><a href="#">Buying Guide</a></li>
-          <li><a href="#">Selling Guide</a></li>
-          <li><a href="#">Blog</a></li>
+          <li><a href="#" data-i18n="footer.r1">Mortgage Calculator</a></li>
+          <li><a href="#" data-i18n="footer.r2">Market Reports</a></li>
+          <li><a href="#" data-i18n="footer.r3">Buying Guide</a></li>
+          <li><a href="#" data-i18n="footer.r4">Selling Guide</a></li>
+          <li><a href="#" data-i18n="footer.r5">Blog</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
       <div class="container">
-        <p>© 2026 DarDZ. All rights reserved.</p>
+        <p data-i18n="footer.copy">&#169; 2026 DarDZ. All rights reserved.</p>
         <div class="footer-legal">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
-          <a href="#">Cookie Policy</a>
+          <a href="#" data-i18n="footer.privacy">Privacy Policy</a>
+          <a href="#" data-i18n="footer.terms">Terms of Service</a>
+          <a href="#" data-i18n="footer.cookies">Cookie Policy</a>
         </div>
       </div>
     </div>
@@ -698,13 +602,13 @@
   <!-- PROPERTY MODAL -->
   <div class="modal-overlay" id="modalOverlay">
     <div class="modal" id="propertyModal">
-      <button class="modal-close" id="modalClose">✕</button>
+      <button class="modal-close" id="modalClose">&#10005;</button>
       <div class="modal-content" id="modalContent"></div>
     </div>
   </div>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="app.js"></script>
+  <script src="i18n.js"></script>
 </body>
 </html>
-
