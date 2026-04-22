@@ -1217,3 +1217,72 @@ img { max-width: 100%; display: block; }
   .amenities-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
+/* ===== LANGUAGE SWITCHER ===== */
+.lang-switcher {
+  display: flex;
+  gap: 2px;
+  background: rgba(255,255,255,.12);
+  border-radius: 8px;
+  padding: 3px;
+}
+.navbar.scrolled .lang-switcher { background: var(--gray-light); }
+
+.lang-btn {
+  padding: 5px 10px;
+  border: none;
+  background: transparent;
+  border-radius: 6px;
+  font-size: .78rem;
+  font-weight: 700;
+  cursor: pointer;
+  color: rgba(255,255,255,.75);
+  transition: all var(--transition);
+  letter-spacing: .5px;
+}
+.lang-btn.active {
+  background: var(--white);
+  color: var(--primary);
+  box-shadow: 0 1px 4px rgba(0,0,0,.15);
+}
+.lang-btn:not(.active):hover { color: var(--white); background: rgba(255,255,255,.2); }
+.navbar.scrolled .lang-btn { color: var(--gray); }
+.navbar.scrolled .lang-btn.active { background: var(--primary); color: var(--white); }
+.navbar.scrolled .lang-btn:not(.active):hover { background: var(--border); color: var(--dark); }
+
+/* ===== RTL SUPPORT ===== */
+body.rtl {
+  font-family: 'Noto Naskh Arabic', 'Inter', sans-serif;
+  direction: rtl;
+}
+body.rtl .nav-inner { flex-direction: row-reverse; }
+body.rtl .nav-links { margin-left: 0; margin-right: auto; }
+body.rtl .nav-actions { margin-left: 0; }
+body.rtl .hero-content h1 { text-align: right; }
+body.rtl .hero-sub { text-align: right; }
+body.rtl .hero-tag { text-align: right; }
+body.rtl .search-tabs { flex-direction: row-reverse; }
+body.rtl .search-fields { direction: rtl; }
+body.rtl .hero-stats { flex-direction: row-reverse; }
+body.rtl .section-header { direction: rtl; }
+body.rtl .card-body { text-align: right; }
+body.rtl .card-features { flex-direction: row-reverse; }
+body.rtl .card-location { flex-direction: row-reverse; }
+body.rtl .contact-wrapper { direction: rtl; }
+body.rtl .contact-item { flex-direction: row-reverse; text-align: right; }
+body.rtl .form-group label { text-align: right; display: block; }
+body.rtl .footer-inner { direction: rtl; }
+body.rtl .footer-brand p { text-align: right; }
+body.rtl .footer-links ul { text-align: right; }
+body.rtl .footer-bottom .container { flex-direction: row-reverse; }
+body.rtl .lp-form-section { direction: rtl; }
+body.rtl .lp-section-title { text-align: right; }
+body.rtl .agent-card { direction: rtl; }
+body.rtl .testimonial-card { direction: rtl; text-align: right; }
+body.rtl .testimonial-author { flex-direction: row-reverse; }
+body.rtl .modal-body { direction: rtl; text-align: right; }
+body.rtl .lp-step { direction: rtl; }
+body.rtl .lp-step-arrow { transform: scaleX(-1); }
+body.rtl .feature-card { direction: rtl; text-align: right; }
+body.rtl .map-sidebar { direction: rtl; }
+body.rtl .map-list-item { text-align: right; }
+body.rtl .nav-links.open a { direction: rtl; }
