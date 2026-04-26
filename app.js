@@ -1,3 +1,64 @@
+// ===== PAGE ROUTER =====
+const pages = ['home','listings','services','map','agents','list-property','contact'];
+
+function showPage(pageId) {
+  // Hide all pages
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+
+  // Show target page
+  const target = document.getElementById('page-' + pageId);
+  if (target) {
+    target.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // Update active nav link
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.classList.remove('nav-active');
+    const href = a.getAttribute('href').replace('#','');
+    if (href === pageId) a.classList.add('nav-active');
+  });
+
+  // Save current page
+  localStorage.setItem('dardz-page', pageId);
+
+  // Re-init map if navigating to map page (lazy init)
+  if (pageId === 'map' && !window.mapInitialized) {
+    setTimeout(initMap, 100);
+    window.mapInitialized = true;
+  }
+}
+
+// Intercept all nav link clicks
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.nav-links a, .nav-actions a, .footer-links a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const href = a.getAttribute('href');
+      if (href && href.startsWith('#') && pages.includes(href.replace('#',''))) {
+        e.preventDefault();
+        showPage(href.replace('#',''));
+        // Close mobile menu if open
+        document.getElementById('navLinks').classList.remove('open');
+      }
+    });
+  });
+
+  // Also handle hero CTA buttons and any other internal links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = a.getAttribute('href').replace('#','');
+      if (pages.includes(target)) {
+        e.preventDefault();
+        showPage(target);
+        document.getElementById('navLinks').classList.remove('open');
+      }
+    });
+  });
+
+  // Load last visited page or default to home
+  const savedPage = localStorage.getItem('dardz-page') || 'home';
+  showPage(savedPage);
+});
 // ===== PROPERTY DATA =====
 const properties = [
   {
@@ -384,16 +445,7 @@ function initMap() {
   });
 }
 
-// Init map when section scrolls into view (lazy load)
-const mapObserver = new IntersectionObserver(entries => {
-  if (entries[0].isIntersecting) {
-    initMap();
-    mapObserver.disconnect();
-  }
-}, { threshold: 0.1 });
-
-const mapSection = document.getElementById("propertyMap");
-if (mapSection) mapObserver.observe(mapSection);
+// Map is initialized by the page router when the map page is first visited
 
 // ===== LIST YOUR PROPERTY FORM =====
 
