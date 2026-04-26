@@ -192,4 +192,3 @@ document.querySelectorAll(".lang-btn").forEach(btn => {
 });
 
 applyLang(currentLang);
-
