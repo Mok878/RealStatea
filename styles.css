@@ -1286,3 +1286,23 @@ body.rtl .feature-card { direction: rtl; text-align: right; }
 body.rtl .map-sidebar { direction: rtl; }
 body.rtl .map-list-item { text-align: right; }
 body.rtl .nav-links.open a { direction: rtl; }
+/* ===== MULTI-PAGE NAVIGATION ===== */
+.page {
+  display: none;
+  animation: pageIn .35s ease;
+}
+.page.active {
+  display: block;
+}
+@keyframes pageIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+/* Active nav link */
+.nav-links a.nav-active {
+  color: var(--accent) !important;
+  font-weight: 700;
+}
+.navbar.scrolled .nav-links a.nav-active {
+  color: var(--primary) !important;
+}
