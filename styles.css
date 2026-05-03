@@ -61,8 +61,8 @@ img { max-width: 100%; display: block; }
 .btn-primary:hover { background: var(--primary-dark); border-color: var(--primary-dark); transform: translateY(-1px); }
 .btn-outline {
   background: transparent;
-  color: var(--white);
-  border-color: rgba(255,255,255,.6);
+  color: var(--primary);
+  border-color: var(--primary);
 }
 .btn-outline:hover { background: rgba(255,255,255,.15); border-color: var(--white); }
 .btn-outline-dark {
@@ -79,7 +79,9 @@ img { max-width: 100%; display: block; }
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 1000;
-  padding: 16px 0;
+  padding: 12px 0;
+  background: var(--white);
+  box-shadow: 0 2px 16px rgba(0,0,0,.10);
   transition: all var(--transition);
 }
 .navbar.scrolled {
@@ -101,7 +103,7 @@ img { max-width: 100%; display: block; }
 .logo {
   font-size: 1.5rem;
   font-weight: 800;
-  color: var(--white);
+  color: var(--dark);
   letter-spacing: -.5px;
 }
 .logo span { color: var(--accent); }
@@ -112,7 +114,7 @@ img { max-width: 100%; display: block; }
   margin-left: auto;
 }
 .nav-links a {
-  color: rgba(255,255,255,.9);
+  color: var(--dark);
   font-weight: 500;
   font-size: .95rem;
   transition: color var(--transition);
@@ -139,7 +141,7 @@ img { max-width: 100%; display: block; }
   display: block;
   width: 24px;
   height: 2px;
-  background: var(--white);
+  background: var(--dark);
   border-radius: 2px;
   transition: all var(--transition);
 }
@@ -1221,7 +1223,7 @@ img { max-width: 100%; display: block; }
 .lang-switcher {
   display: flex;
   gap: 2px;
-  background: rgba(255,255,255,.12);
+  background: var(--gray-light);
   border-radius: 8px;
   padding: 3px;
 }
@@ -1235,7 +1237,7 @@ img { max-width: 100%; display: block; }
   font-size: .78rem;
   font-weight: 700;
   cursor: pointer;
-  color: rgba(255,255,255,.75);
+  color: var(--gray);
   transition: all var(--transition);
   letter-spacing: .5px;
 }
