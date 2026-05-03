@@ -1306,3 +1306,33 @@ body.rtl .nav-links.open a { direction: rtl; }
 .navbar.scrolled .nav-links a.nav-active {
   color: var(--primary) !important;
 }
+/* ===== NAVBAR ALWAYS VISIBLE FIX ===== */
+.navbar {
+  background: var(--white) !important;
+  box-shadow: 0 2px 16px rgba(0,0,0,.10) !important;
+  padding: 12px 0 !important;
+}
+.logo { color: var(--dark) !important; }
+.nav-links a {
+  color: var(--dark) !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  padding: 6px 4px;
+}
+.nav-links a:hover { color: var(--primary) !important; }
+.nav-links a.nav-active { color: var(--primary) !important; font-weight: 700 !important; }
+.hamburger span { background: var(--dark) !important; }
+.btn-outline {
+  color: var(--primary) !important;
+  border-color: var(--primary) !important;
+}
+.btn-outline:hover {
+  background: var(--primary) !important;
+  color: var(--white) !important;
+}
+.lang-switcher { background: var(--gray-light) !important; }
+.lang-btn { color: var(--gray) !important; }
+.lang-btn.active { background: var(--primary) !important; color: var(--white) !important; }
+.lang-btn:not(.active):hover { background: var(--border) !important; color: var(--dark) !important; }
+/* ===== HERO PADDING FIX (solid navbar) ===== */
+.hero { padding-top: 100px !important; }
